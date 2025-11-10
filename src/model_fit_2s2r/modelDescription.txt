@@ -1,0 +1,14 @@
+----------------------------------------------
+Description of the model m_2s2r
+----------------------------------------------
+
+
+2-state, 2-regime model. Initiaiton rate is independant on the regime. 
+
+Regime 1    <->     Regime 2
+
+    RNA                RNA
+    |                   |
+    on                  on
+    ||        <->       ||
+    off                 off
