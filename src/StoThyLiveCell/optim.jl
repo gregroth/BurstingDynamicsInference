@@ -1,5 +1,8 @@
-#functions used in the optimization procedure
-
+################################################
+# 
+# main functions used in the optimization procedure
+#
+##################################################
 struct OptimStruct{DF,DI,M}
     data::DF
     dist::DI

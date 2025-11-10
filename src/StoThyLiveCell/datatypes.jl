@@ -1,4 +1,11 @@
-#list of the distance functions used in the fit of the multi-state model
+#####################################
+#
+#Define the data types used to fit the multistate model
+#
+#####################################
+
+
+
 abstract type AbstractData end
 abstract type AbstractDataGroup end
 

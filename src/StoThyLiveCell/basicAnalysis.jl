@@ -1,3 +1,9 @@
+#####################################
+#
+# Implementation of the analytical calculation of the model observables
+#
+#####################################
+
 """
     normalizemat!(A::Array{Float64,2})
 

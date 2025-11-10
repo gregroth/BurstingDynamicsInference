@@ -1,4 +1,11 @@
-#list of the distance functions used in the fit of the multi-state model
+#####################################
+#
+#Define the distance function used in the fit of the multistate model
+#
+#####################################
+
+
+
 abstract type AbstractDistanceFitRNA end
 abstract type AbstractDistanceFitBurst end
 abstract type AbstractDistanceFitRNAandBurst end
