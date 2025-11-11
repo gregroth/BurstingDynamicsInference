@@ -23,7 +23,7 @@ list_clone = unique(df.clone);
 deleteat!(df,ismissing.(df[:,readout_colname]))
 
 #Information about the clones
-df_clones = CSV.read("Positions_plate5.6.csv", DataFrame);
+df_clones = CSV.read("./src/data_analysis/Positions_plate5.6.csv", DataFrame);
 delete!(df_clones, ismissing.(df_clones.group_name_seq))
 
 
@@ -31,7 +31,7 @@ delete!(df_clones, ismissing.(df_clones.group_name_seq))
 track_gdf = groupby(df, :unique_id)
 alltracks = DataFrame(clone = Vector{String}(), bursttrack = Vector{Vector{Bool}}(), frametrack = Vector{Vector{Int64}}(),intensitytrack = Vector{Vector{Float64}}(), trackid = Vector{Int64}())
 for group in track_gdf
-    push!(alltracks, (group.clone[1], group[:,readout_colname], group.frame,  group.corr_trace, group.unique_id[1]))
+    push!(alltracks, (group.clone[1], group[:,readout_colname], group.frame,  group.corrected_intensity, group.unique_id[1]))
 end
 
 #select a frame window and cut the tracks accordingly
@@ -94,6 +94,6 @@ end
 sort!(bstat,"absdistance");
 
 
-Arrow.write("../../processed_data/data_$(leftlimit)_$(rightlimit).arrow", bstat)
-save("../../processed_data/metadata_$(leftlimit)_$(rightlimit).jld2", "leftlimit", leftlimit, "rightlimit", rightlimit)
+Arrow.write("./processed_data/data_$(leftlimit)_$(rightlimit).arrow", bstat)
+save("./processed_data/metadata_$(leftlimit)_$(rightlimit).jld2", "leftlimit", leftlimit, "rightlimit", rightlimit)
 
