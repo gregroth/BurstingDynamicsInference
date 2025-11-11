@@ -7,8 +7,13 @@ using Arrow
 include("survival_analysis.jl")
 using .survival_analysis
 
-pathtodata = "/tungstenfs/scratch/ggiorget/Jana/transcrip_dynamic/E10_Mobi/live_imaging/data/306KI-ddCTCF-dpuro-MS2-HaloMCP-E10Mobi_JF549_30s_fiveclone_combined_threshold2800_curated.csv"
-readout_colname = :spotdetected_filtered_curated
+
+cd("/tungstenfs/scratch/ggiorget/Gregory/julia/BurstingDynamicsInference/")
+
+
+pathtodata = "./processed_data/dataToupload.csv"
+
+readout_colname = :spotdetected
 
 
 #load the data

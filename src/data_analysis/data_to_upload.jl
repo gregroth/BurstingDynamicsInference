@@ -10,10 +10,10 @@ pathtodata = "/tungstenfs/scratch/ggiorget/Jana/transcrip_dynamic/E10_Mobi/live_
 #load the data
 df = CSV.read(pathtodata, DataFrame)
 #remove missing 
-deleteat!(df,ismissing.(df[:,readout_colname]))
+deleteat!(df,ismissing.(df[:,:spotdetected_filtered_curated]))
 
 
-df_toupload = select(df,:track_id, :unique_id, :clone,:frame, :x, :y, :mean_spot, :mean_spot_bleach, :corr_trace,:mean_localbackground, :mean_localbackground_bleach, :mean_completecell, :spotdetected_filtered_curated)
+df_toupload = select(df,:unique_id, :clone,:frame, :x, :y, :mean_spot, :mean_spot_bleach, :corr_trace,:mean_localbackground, :mean_localbackground_bleach, :mean_completecell, :spotdetected_filtered_curated)
 
 rename!(df_toupload, [:corr_trace => :corrected_intensity, :spotdetected_filtered_curated => :spotdetected])
 
